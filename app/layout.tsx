@@ -10,7 +10,6 @@ import { Suspense } from "react"
 export const metadata: Metadata = {
   title: "AI Book Condition Classifier",
   description: "Classify book conditions using AI-powered image analysis",
-  generator: "v0.app",
 }
 
 export default function RootLayout({
