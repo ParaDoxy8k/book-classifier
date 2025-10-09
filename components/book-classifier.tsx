@@ -51,9 +51,9 @@ export function BookClassifier() {
     setIsAnalyzing(true)
     try {
       const formData = new FormData()
-      formData.append("image", file)
+      formData.append("file", file)
 
-      const response = await fetch("/api/classify", {
+      const response = await fetch("https://final-api-2gqx.onrender.com/predict", {
         method: "POST",
         body: formData,
       })
@@ -74,15 +74,10 @@ export function BookClassifier() {
 
   const getConditionColor = (condition: string) => {
     switch (condition.toLowerCase()) {
-      case "like new":
+      case "new":
       case "excellent":
         return "bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/20"
-      case "very good":
-      case "good":
-        return "bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/20"
-      case "fair":
-        return "bg-yellow-500/10 text-yellow-700 dark:text-yellow-400 border-yellow-500/20"
-      case "poor":
+      case "old":
         return "bg-red-500/10 text-red-700 dark:text-red-400 border-red-500/20"
       default:
         return "bg-muted text-muted-foreground"
@@ -158,7 +153,7 @@ export function BookClassifier() {
               </div>
               <div className="text-right">
                 <p className="text-sm text-muted-foreground">Confidence</p>
-                <p className="text-2xl font-bold text-primary">{Math.round(result.confidence * 100)}%</p>
+                <p className="text-2xl font-bold text-primary">{Math.round(result.confidence)}%</p>
               </div>
             </div>
 
