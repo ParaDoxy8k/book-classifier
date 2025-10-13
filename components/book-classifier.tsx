@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
+import TargetCursor from "./TargetCursor"
 
 interface ClassificationResult {
   condition: string
@@ -86,7 +87,11 @@ export function BookClassifier() {
 
   return (
     <div className="space-y-6">
-      <Card className="border-2 border-dashed border-border bg-card transition-colors hover:border-primary/50">
+      <TargetCursor
+        spinDuration={2}
+        hideDefaultCursor={true}
+      />
+      <Card className="border-2 border-dashed border-border bg-card transition-colors hover:border-primary/50 cursor-target">
         <CardContent className="p-8">
           <label htmlFor="image-upload" className="flex cursor-pointer flex-col items-center justify-center gap-4">
             {!selectedImage ? (
@@ -115,6 +120,7 @@ export function BookClassifier() {
                   setResult(null)
                   setError(null)
                 }}
+                className="cursor-target"
               >
                 Upload Different Image
               </Button>

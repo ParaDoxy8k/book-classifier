@@ -4,6 +4,7 @@ import { Moon, Sun, BookOpen } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
+import TargetCursor from "./TargetCursor"
 
 export function Header() {
   const { theme, setTheme } = useTheme()
@@ -14,7 +15,7 @@ export function Header() {
   }, [])
 
   return (
-    <header className="border-b border-border bg-card">
+    <header className="border-b border-border bg-transparent backdrop-blur-xs">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-2">
           <BookOpen className="h-6 w-6 text-primary" />
@@ -26,6 +27,7 @@ export function Header() {
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             aria-label="Toggle theme"
+            className="cursor-target"
           >
             {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
