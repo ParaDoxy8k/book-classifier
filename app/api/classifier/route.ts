@@ -29,11 +29,11 @@ export async function POST(request: Request) {
     const mappedResult = {
       condition: result.prediction === "Old" ? "Poor" : "Excellent",
       confidence: result.confidence / 100,
-      details: {
-        coverCondition: result.prediction === "Old" ? "Worn cover" : "Clean cover",
-        pageCondition: result.prediction === "Old" ? "Yellowed pages" : "Crisp pages",
-        bindingCondition: result.prediction === "Old" ? "Loose binding" : "Firm binding",
-      },
+      // details: {
+      //   coverCondition: result.prediction === "Old" ? "Worn cover" : "Clean cover",
+      //   pageCondition: result.prediction === "Old" ? "Yellowed pages" : "Crisp pages",
+      //   bindingCondition: result.prediction === "Old" ? "Loose binding" : "Firm binding",
+      // },
       recommendations:
         result.prediction === "Old"
           ? [

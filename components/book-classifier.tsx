@@ -163,7 +163,7 @@ export function BookClassifier() {
               </div>
             </div>
 
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
               <h4 className="font-semibold">Detailed Assessment</h4>
               <div className="grid gap-3 md:grid-cols-3">
                 <div className="rounded-lg bg-muted p-4">
@@ -179,7 +179,7 @@ export function BookClassifier() {
                   <p className="font-medium">{result.details.bindingCondition}</p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {result.recommendations.length > 0 && (
               <div className="space-y-3">
